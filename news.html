@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Promtmix — Promtmix</title>
+<title>News dashboard — Promtmix</title>
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
 <meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
-<meta property="og:title" content="About Promtmix — Promtmix"><meta property="og:type" content="website">
+<meta property="og:title" content="News dashboard — Promtmix"><meta property="og:type" content="website">
 <meta property="og:site_name" content="Promtmix">
 </head>
 <body class="">
@@ -25,9 +25,25 @@
   </div>
   <div class="hero">
 
-<h1>About Promtmix</h1>
-<p>Promtmix provides fast, minimalist calculators and converters, plus a compact news dashboard. It’s free to use. We earn revenue from ads and affiliate links.</p>
-<div class="alert small">Nutrition calculators are for education only and are not medical advice. Carrier rules may change; always verify dimensional weight with your carrier.</div>
+<h1>Daily News</h1>
+<p class="small">US · Canada · Europe · World · Crypto · Tech — auto‑updated every day by our bot. Last update: 2025-09-29 03:23 UTC</p>
+<div class="tabs">
+  <a class="tab active" href="#us">US</a>
+  <a class="tab" href="#canada">Canada</a>
+  <a class="tab" href="#europe">Europe</a>
+  <a class="tab" href="#world">World</a>
+  <a class="tab" href="#crypto">Crypto</a>
+  <a class="tab" href="#tech">Tech</a>
+</div>
+<div id="news-container">
+  <div class="news-col"><div class="news-item"><div class="news-meta">Loading… (first build will replace this within a day)</div></div></div>
+</div>
+<script>
+const tabs = document.querySelectorAll('.tab');
+function activate(hash){ tabs.forEach(t=>t.classList.toggle('active', t.getAttribute('href')===hash)); }
+window.addEventListener('hashchange',()=>activate(location.hash||'#us'));
+activate(location.hash||'#us');
+</script>
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.

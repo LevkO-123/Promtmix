@@ -1,34 +1,30 @@
 <!doctype html>
-<html lang="en" class="n-logistics">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Box volume — Promtmix</title>
-<meta name="description" content="Calculate box volume in cubic inches/centimeters/feet.">
-<link rel="canonical" href="https://levko-123.github.io/promtmix/logistics/box-volume.html">
-<meta property="og:title" content="Box volume — Promtmix">
-<meta property="og:description" content="Calculate box volume in cubic inches/centimeters/feet.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://levko-123.github.io/promtmix/logistics/box-volume.html">
-<meta property="og:site_name" content="Promtmix">
-<link rel="stylesheet" href="/promtmix/assets/style.css">
+<link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
-<script defer src="/promtmix/assets/pmx.js"></script>
+<script defer src="pmx.js"></script>
+<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
+<meta property="og:title" content="Box volume — Promtmix"><meta property="og:type" content="website">
+<meta property="og:site_name" content="Promtmix">
 </head>
-<body>
+<body class="section-accent-log">
 <div class="container">
   <div class="header">
-    <div class="brand">Promtmix <span class="badge">Logistics</span></div>
-    <nav class="nav">
-      <a href="/promtmix/">Home</a>
-      <a href="/promtmix/converters/">Converters</a>
-      <a href="/promtmix/logistics/">Logistics</a>
-      <a href="/promtmix/nutrition/">Nutrition</a>
-      <a href="/promtmix/about.html">About</a>
+    <div class="brand">Promtmix</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="converters.html">Converters</a>
+      <a href="logistics.html">Logistics</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="news.html">News</a>
+      <a href="about.html">About</a>
     </nav>
   </div>
-  <div class="card">
-    
+  <div class="hero">
+
 <h1>Box volume calculator</h1>
 <div class="grid">
   <div class="card">
@@ -48,20 +44,17 @@
 const l=document.getElementById('l'), w=document.getElementById('w'), h=document.getElementById('h'), u=document.getElementById('u'), out=document.getElementById('out');
 function update(){
   const L=parseFloat(l.value||0), W=parseFloat(w.value||0), H=parseFloat(h.value||0);
-  let cin = L*W*H; // assume inches
-  if(u.value==='cm'){ cin = (L*W*H)/16.387064; } // cm3 -> in3
+  let cin = L*W*H; // default inches
+  if(u.value==='cm'){ cin = (L*W*H)/16.387064; }
   const ccm = cin*16.387064;
   const cft = cin/1728.0;
   out.innerHTML = cin.toFixed(2)+" in³ &nbsp; | &nbsp; "+ccm.toFixed(2)+" cm³ &nbsp; | &nbsp; "+cft.toFixed(3)+" ft³";
 }
 document.addEventListener('input', update); update();
 </script>
-
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 02:50 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
   </footer>
-</div>
-</body>
-</html>
+</div></body></html>

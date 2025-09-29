@@ -1,34 +1,30 @@
 <!doctype html>
-<html lang="en" class="n-logistics">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dimensional weight calculator — Promtmix</title>
-<meta name="description" content="Estimate dimensional weight for UPS, FedEx, DHL, USPS.">
-<link rel="canonical" href="https://levko-123.github.io/promtmix/logistics/dim-weight.html">
-<meta property="og:title" content="Dimensional weight calculator — Promtmix">
-<meta property="og:description" content="Estimate dimensional weight for UPS, FedEx, DHL, USPS.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://levko-123.github.io/promtmix/logistics/dim-weight.html">
-<meta property="og:site_name" content="Promtmix">
-<link rel="stylesheet" href="/promtmix/assets/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimensional weight — Promtmix</title>
+<link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
-<script defer src="/promtmix/assets/pmx.js"></script>
+<script defer src="pmx.js"></script>
+<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
+<meta property="og:title" content="Dimensional weight — Promtmix"><meta property="og:type" content="website">
+<meta property="og:site_name" content="Promtmix">
 </head>
-<body>
+<body class="section-accent-log">
 <div class="container">
   <div class="header">
-    <div class="brand">Promtmix <span class="badge">Logistics</span></div>
-    <nav class="nav">
-      <a href="/promtmix/">Home</a>
-      <a href="/promtmix/converters/">Converters</a>
-      <a href="/promtmix/logistics/">Logistics</a>
-      <a href="/promtmix/nutrition/">Nutrition</a>
-      <a href="/promtmix/about.html">About</a>
+    <div class="brand">Promtmix</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="converters.html">Converters</a>
+      <a href="logistics.html">Logistics</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="news.html">News</a>
+      <a href="about.html">About</a>
     </nav>
   </div>
-  <div class="card">
-    
+  <div class="hero">
+
 <h1>Dimensional weight (DIM)</h1>
 <p class="small">Estimate billable weight by carrier. Real rates vary by service; always check your carrier. Uses common divisors: UPS/FedEx/DHL: 139 in³/lb (5000 cm³/kg); USPS: 166 in³/lb (6000 cm³/kg) for some domestic shipments.</p>
 <div class="grid">
@@ -57,19 +53,16 @@ function update(){
   if(C.value==='USPS'){ dimDiv = 166; dimDivMetric = 6000; }
   const l=parseFloat(L.value||0), w=parseFloat(W.value||0), h=parseFloat(H.value||0);
   let volIn3 = l*w*h;
-  if(U.value==='cm'){ volIn3 = (l*w*h)/16.387064; } // convert cm3 -> in3
+  if(U.value==='cm'){ volIn3 = (l*w*h)/16.387064; }
   const lb = volIn3 / dimDiv;
-  const kg = (l*w*h)/dimDivMetric; // since cm units if using metric divisor
+  const kg = (l*w*h)/dimDivMetric;
   out.innerHTML = lb.toFixed(2)+" lb (approx)  |  "+kg.toFixed(2)+" kg (approx)";
 }
 document.addEventListener('input', update); update();
 </script>
-
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 02:50 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
   </footer>
-</div>
-</body>
-</html>
+</div></body></html>
