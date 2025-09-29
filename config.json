@@ -1,0 +1,15 @@
+{
+  "site_name": "Promtmix",
+  "brand": "Promtmix",
+  "support_email": "support@promtmix.com",
+  "base_url": "https://levko-123.github.io/promtmix",
+  "adsense_client": "ca-pub-6781021197640734",
+  "amazon_tag": "promtmix20-20",
+  "sovrn_key": "2422504",
+  "sections": [
+    "converters",
+    "logistics",
+    "nutrition"
+  ],
+  "build_time": "2025-09-29 02:50 UTC"
+}

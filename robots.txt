@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://levko-123.github.io/promtmix/sitemap.xml
