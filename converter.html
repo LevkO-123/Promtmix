@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% block content %}
+<h1>{{ label }}</h1>
+<p class="small">{{ desc }}</p>
+<div class="grid">
+  <div class="card">
+    <label>Value ({{ from_unit }})</label>
+    <input id="val" type="number" step="any" value="{{ default_value }}">
+    <div class="result" id="out"></div>
+  </div>
+  <div class="card">
+    <h3>Quick presets</h3>
+    {% for p in presets %}<span class="tag preset" data-v="{{ p }}">{{ p }} {{ from_unit }}</span>{% endfor %}
+    <hr>
+    <p class="small">Formula: {{ formula_desc }}</p>
+  </div>
+  <div class="card">
+    <h3>Useful gear</h3>
+    <p><a data-amazon-query="{{ gear_query }}">Search on Amazon</a> — postal scales, calipers, tape measures.</p>
+  </div>
+</div>
+<script>
+function convert(x){
+  {{ formula_js }}
+}
+const val = document.getElementById('val');
+const out = document.getElementById('out');
+function update(){ 
+  const x = parseFloat(val.value||0); 
+  const y = convert(x); 
+  out.textContent = isFinite(y) ? y + " {{ to_unit }}" : "—";
+}
+document.addEventListener('input', update);
+document.querySelectorAll('.preset').forEach(el=>el.addEventListener('click',()=>{val.value=el.dataset.v;update();}));
+update();
+</script>
+{% endblock %}

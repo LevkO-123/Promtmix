@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% block content %}
+<h1>Box volume calculator</h1>
+<div class="grid">
+  <div class="card">
+    <label>Length</label><input id="l" type="number" step="any" value="12">
+    <label>Width</label><input id="w" type="number" step="any" value="8">
+    <label>Height</label><input id="h" type="number" step="any" value="6">
+    <label>Unit</label>
+    <select id="u"><option value="in">inches</option><option value="cm">cm</option></select>
+    <div class="result" id="out"></div>
+  </div>
+  <div class="card">
+    <h3>Tips</h3>
+    <p class="small">Cubic feet help estimate shipping and storage. <a data-amazon-query="cardboard boxes packing tape scale">Packing supplies</a>.</p>
+  </div>
+</div>
+<script>
+const l=document.getElementById('l'), w=document.getElementById('w'), h=document.getElementById('h'), u=document.getElementById('u'), out=document.getElementById('out');
+function update(){
+  const L=parseFloat(l.value||0), W=parseFloat(w.value||0), H=parseFloat(h.value||0);
+  let cin = L*W*H; // assume inches
+  if(u.value==='cm'){ cin = (L*W*H)/16.387064; } // cm3 -> in3
+  const ccm = cin*16.387064;
+  const cft = cin/1728.0;
+  out.innerHTML = cin.toFixed(2)+" in³ &nbsp; | &nbsp; "+ccm.toFixed(2)+" cm³ &nbsp; | &nbsp; "+cft.toFixed(3)+" ft³";
+}
+document.addEventListener('input', update); update();
+</script>
+{% endblock %}

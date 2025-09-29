@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block content %}
+<h1>Converters</h1>
+<p class="small">Popular unit conversions. Choose a converter:</p>
+<div class="grid">
+{% for c in converters %}
+  <div class="card">
+    <h3>{{ c.label }}</h3>
+    <p class="small">{{ c.desc }}</p>
+    <a class="button" href="{{ c.url }}">Open</a>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

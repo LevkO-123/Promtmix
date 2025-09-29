@@ -1,0 +1,33 @@
+
+:root{
+  --bg:#0b0e14;--fg:#e6e6e6;--muted:#a8b3c1;--accent:#4dd0e1;--accent2:#82ffa1;--accent3:#ffd166;
+  --card:#111827;--bord:#1f2937;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.nav a{padding:8px 10px;border:1px solid var(--bord);border-radius:10px;background:rgba(255,255,255,.02)}
+.header{display:flex;justify-content:space-between;align-items:center;margin:8px 0 16px}
+.brand{font-weight:800;letter-spacing:.3px}
+.card{background:var(--card);border:1px solid var(--bord);border-radius:16px;padding:18px;margin:14px 0}
+h1{font-size:28px;margin:10px 0 6px} h2{font-size:22px;margin:10px 0 6px} h3{font-size:18px;margin:8px 0}
+.small{color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.button{display:inline-block;border:1px solid var(--bord);border-radius:12px;padding:10px 14px;background:rgba(255,255,255,.02)}
+input,select{background:#0f1623;color:var(--fg);border:1px solid var(--bord);border-radius:10px;padding:10px 12px;width:100%}
+label{display:block;margin:.2rem 0 .3rem;color:var(--muted)}
+.result{font-weight:700;font-size:24px;margin-top:10px}
+footer{margin:24px 0 10px;color:var(--muted);font-size:.9rem}
+.badge{display:inline-block;padding:.2rem .5rem;border:1px solid var(--bord);border-radius:999px;margin-left:8px;font-size:.8rem;color:#c2ccda}
+.tag{display:inline-block;padding:.2rem .5rem;border:1px solid var(--bord);border-radius:8px;margin:.2rem .4rem 0 0;font-size:.8rem}
+/* niche accents */
+.n-converters .brand{color:var(--accent)}
+.n-logistics .brand{color:var(--accent2)}
+.n-nutrition .brand{color:var(--accent3)}
+hr{border:none;border-top:1px solid var(--bord);margin:16px 0}
+table{border-collapse:collapse;width:100%}
+td,th{border:1px solid var(--bord);padding:8px 10px;text-align:left}
+.kbd{font-family:monospace;background:#101826;border:1px solid var(--bord);border-radius:6px;padding:2px 6px}
+.alert{background:#141a24;border:1px solid var(--bord);padding:10px;border-radius:10px}

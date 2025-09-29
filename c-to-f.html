@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="n-converters">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Celsius to Fahrenheit — Promtmix</title>
+<meta name="description" content="°C → °F.">
+<link rel="canonical" href="https://levko-123.github.io/promtmix/converters/c-to-f.html">
+<meta property="og:title" content="Celsius to Fahrenheit — Promtmix">
+<meta property="og:description" content="°C → °F.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://levko-123.github.io/promtmix/converters/c-to-f.html">
+<meta property="og:site_name" content="Promtmix">
+<link rel="stylesheet" href="/promtmix/assets/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
+<script defer src="/promtmix/assets/pmx.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand">Promtmix <span class="badge">Converters</span></div>
+    <nav class="nav">
+      <a href="/promtmix/">Home</a>
+      <a href="/promtmix/converters/">Converters</a>
+      <a href="/promtmix/logistics/">Logistics</a>
+      <a href="/promtmix/nutrition/">Nutrition</a>
+      <a href="/promtmix/about.html">About</a>
+    </nav>
+  </div>
+  <div class="card">
+    
+<h1>Celsius to Fahrenheit</h1>
+<p class="small">°C → °F.</p>
+<div class="grid">
+  <div class="card">
+    <label>Value (°C)</label>
+    <input id="val" type="number" step="any" value="0">
+    <div class="result" id="out"></div>
+  </div>
+  <div class="card">
+    <h3>Quick presets</h3>
+    <span class="tag preset" data-v="0">0 °C</span><span class="tag preset" data-v="20">20 °C</span><span class="tag preset" data-v="37">37 °C</span><span class="tag preset" data-v="100">100 °C</span>
+    <hr>
+    <p class="small">Formula: °F = °C × 9/5 + 32</p>
+  </div>
+  <div class="card">
+    <h3>Useful gear</h3>
+    <p><a data-amazon-query="thermometer">Search on Amazon</a> — postal scales, calipers, tape measures.</p>
+  </div>
+</div>
+<script>
+function convert(x){
+  return (x*9/5+32).toFixed(2);
+}
+const val = document.getElementById('val');
+const out = document.getElementById('out');
+function update(){ 
+  const x = parseFloat(val.value||0); 
+  const y = convert(x); 
+  out.textContent = isFinite(y) ? y + " °F" : "—";
+}
+document.addEventListener('input', update);
+document.querySelectorAll('.preset').forEach(el=>el.addEventListener('click',()=>{val.value=el.dataset.v;update();}));
+update();
+</script>
+
+  </div>
+  <footer>
+    © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
+    <br><span class="small">Built 2025-09-29 02:50 UTC. This site uses affiliate links and ads to remain free.</span>
+  </footer>
+</div>
+</body>
+</html>

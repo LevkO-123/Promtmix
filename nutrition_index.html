@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block content %}
+<h1>Nutrition tools</h1>
+<div class="grid">
+  <div class="card">
+    <h3>BMI calculator</h3>
+    <p class="small">Body Mass Index using metric or imperial.</p>
+    <a class="button" href="/promtmix/nutrition/bmi.html">Open</a>
+  </div>
+  <div class="card">
+    <h3>BMR & TDEE</h3>
+    <p class="small">Mifflin‑St Jeor basal metabolic rate and daily energy.</p>
+    <a class="button" href="/promtmix/nutrition/bmr.html">Open</a>
+  </div>
+  <div class="card">
+    <h3>Macro splits</h3>
+    <p class="small">Split your daily calories into protein/carbs/fat.</p>
+    <a class="button" href="/promtmix/nutrition/macros.html">Open</a>
+  </div>
+</div>
+<div class="alert small">Not medical advice. For educational use only.</div>
+{% endblock %}

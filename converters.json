@@ -1,0 +1,103 @@
+[
+  {
+    "slug": "mm-to-inch",
+    "label": "Millimeters to Inches",
+    "desc": "Convert mm to inches precisely.",
+    "from": "mm",
+    "to": "in",
+    "preset": [
+      5,
+      10,
+      25,
+      50,
+      100
+    ],
+    "formula_js": "return (x/25.4).toFixed(5);",
+    "formula_desc": "in = mm \u00f7 25.4",
+    "gear_query": "digital caliper"
+  },
+  {
+    "slug": "cm-to-inch",
+    "label": "Centimeters to Inches",
+    "desc": "Convert cm to inches.",
+    "from": "cm",
+    "to": "in",
+    "preset": [
+      1,
+      5,
+      10,
+      20,
+      50
+    ],
+    "formula_js": "return (x/2.54).toFixed(5);",
+    "formula_desc": "in = cm \u00f7 2.54",
+    "gear_query": "measuring tape"
+  },
+  {
+    "slug": "kg-to-lb",
+    "label": "Kilograms to Pounds",
+    "desc": "kg \u2192 lb.",
+    "from": "kg",
+    "to": "lb",
+    "preset": [
+      1,
+      2,
+      5,
+      10,
+      20
+    ],
+    "formula_js": "return (x*2.20462262185).toFixed(5);",
+    "formula_desc": "lb \u2248 kg \u00d7 2.20462",
+    "gear_query": "body weight scale"
+  },
+  {
+    "slug": "g-to-oz",
+    "label": "Grams to Ounces",
+    "desc": "g \u2192 oz.",
+    "from": "g",
+    "to": "oz",
+    "preset": [
+      10,
+      50,
+      100,
+      250,
+      500
+    ],
+    "formula_js": "return (x*0.03527396195).toFixed(5);",
+    "formula_desc": "oz \u2248 g \u00d7 0.03527",
+    "gear_query": "kitchen scale"
+  },
+  {
+    "slug": "c-to-f",
+    "label": "Celsius to Fahrenheit",
+    "desc": "\u00b0C \u2192 \u00b0F.",
+    "from": "\u00b0C",
+    "to": "\u00b0F",
+    "preset": [
+      0,
+      20,
+      37,
+      100
+    ],
+    "formula_js": "return (x*9/5+32).toFixed(2);",
+    "formula_desc": "\u00b0F = \u00b0C \u00d7 9/5 + 32",
+    "gear_query": "thermometer"
+  },
+  {
+    "slug": "l-to-gal",
+    "label": "Liters to Gallons (US)",
+    "desc": "L \u2192 gal (US).",
+    "from": "L",
+    "to": "gal",
+    "preset": [
+      1,
+      5,
+      10,
+      20,
+      50
+    ],
+    "formula_js": "return (x*0.2641720524).toFixed(5);",
+    "formula_desc": "gal \u2248 L \u00d7 0.264172",
+    "gear_query": "fuel container"
+  }
+]

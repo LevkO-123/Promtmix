@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="n-{{section}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — Promtmix</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:title" content="{{ title }} — Promtmix">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:site_name" content="Promtmix">
+<link rel="stylesheet" href="/promtmix/assets/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_client }}" crossorigin="anonymous"></script>
+<script defer src="/promtmix/assets/pmx.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand">Promtmix <span class="badge">{{ section|capitalize }}</span></div>
+    <nav class="nav">
+      <a href="/promtmix/">Home</a>
+      <a href="/promtmix/converters/">Converters</a>
+      <a href="/promtmix/logistics/">Logistics</a>
+      <a href="/promtmix/nutrition/">Nutrition</a>
+      <a href="/promtmix/about.html">About</a>
+    </nav>
+  </div>
+  <div class="card">
+    {% block content %}{% endblock %}
+  </div>
+  <footer>
+    © {{ year }} Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
+    <br><span class="small">Built {{ build_time }}. This site uses affiliate links and ads to remain free.</span>
+  </footer>
+</div>
+</body>
+</html>

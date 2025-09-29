@@ -1,0 +1,37 @@
+{% extends "base.html" %}{% block content %}
+<h1>Dimensional weight (DIM)</h1>
+<p class="small">Estimate billable weight by carrier. Real rates vary by service; always check your carrier. Uses common divisors: UPS/FedEx/DHL: 139 in³/lb (5000 cm³/kg); USPS: 166 in³/lb (6000 cm³/kg) for some domestic shipments.</p>
+<div class="grid">
+  <div class="card">
+    <label>Length</label><input id="l" type="number" step="any" value="12">
+    <label>Width</label><input id="w" type="number" step="any" value="8">
+    <label>Height</label><input id="h" type="number" step="any" value="6">
+    <label>Unit</label>
+    <select id="u"><option value="in">inches</option><option value="cm">cm</option></select>
+    <label>Carrier</label>
+    <select id="c">
+      <option value="UPS">UPS</option><option value="FedEx">FedEx</option>
+      <option value="DHL">DHL</option><option value="USPS">USPS</option>
+    </select>
+    <div class="result" id="out"></div>
+  </div>
+  <div class="card">
+    <h3>Packing gear</h3>
+    <p><a data-amazon-query="postal scale 10lb">Postal scales</a> · <a data-amazon-query="bubble wrap">Bubble wrap</a> · <a data-amazon-query="packing tape">Packing tape</a></p>
+  </div>
+</div>
+<script>
+const L=document.getElementById('l'), W=document.getElementById('w'), H=document.getElementById('h'), U=document.getElementById('u'), C=document.getElementById('c'), out=document.getElementById('out');
+function update(){
+  let dimDiv = 139; let dimDivMetric = 5000;
+  if(C.value==='USPS'){ dimDiv = 166; dimDivMetric = 6000; }
+  const l=parseFloat(L.value||0), w=parseFloat(W.value||0), h=parseFloat(H.value||0);
+  let volIn3 = l*w*h;
+  if(U.value==='cm'){ volIn3 = (l*w*h)/16.387064; } // convert cm3 -> in3
+  const lb = volIn3 / dimDiv;
+  const kg = (l*w*h)/dimDivMetric; // since cm units if using metric divisor
+  out.innerHTML = lb.toFixed(2)+" lb (approx)  |  "+kg.toFixed(2)+" kg (approx)";
+}
+document.addEventListener('input', update); update();
+</script>
+{% endblock %}

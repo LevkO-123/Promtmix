@@ -1,0 +1,35 @@
+{% extends "base.html" %}{% block content %}
+<h1>BMI calculator</h1>
+<div class="grid">
+  <div class="card">
+    <label>Unit</label>
+    <select id="u"><option value="metric">Metric (kg / cm)</option><option value="imperial">Imperial (lb / in)</option></select>
+    <label>Weight</label><input id="w" type="number" step="any" value="70">
+    <label>Height</label><input id="h" type="number" step="any" value="175">
+    <div class="result" id="out"></div>
+  </div>
+  <div class="card">
+    <h3>Basics</h3>
+    <p class="small">BMI = weight / height² (kg/m²). It’s a rough screening metric and not a diagnosis.</p>
+    <p><a data-amazon-query="body weight scale">Body scales</a> · <a data-amazon-query="measuring tape">Measuring tapes</a></p>
+  </div>
+</div>
+<script>
+const U=document.getElementById('u'), W=document.getElementById('w'), H=document.getElementById('h'), out=document.getElementById('out');
+function update(){
+  let w=parseFloat(W.value||0), h=parseFloat(H.value||0);
+  let bmi = 0;
+  if(U.value==='metric'){ bmi = w / Math.pow(h/100.0, 2); }
+  else { bmi = (w / Math.pow(h,2)) * 703.06957964; }
+  let cat = '—';
+  if(bmi>0){
+    if(bmi<18.5) cat='Underweight';
+    else if(bmi<25) cat='Normal';
+    else if(bmi<30) cat='Overweight';
+    else cat='Obesity';
+  }
+  out.textContent = 'BMI: ' + (isFinite(bmi)? bmi.toFixed(1):'—') + ' ('+cat+')';
+}
+document.addEventListener('input', update); update();
+</script>
+{% endblock %}
