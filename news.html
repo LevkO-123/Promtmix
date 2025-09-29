@@ -2,15 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>News dashboard — Promtmix</title>
+<title>News — Promtmix</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
-<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
-<meta property="og:title" content="News dashboard — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix">
+<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
+<meta property="og:title" content="News — Promtmix"><meta property="og:type" content="website">
+<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Promtmix",
+  "url": "https://levko-123.github.io/Promtmix/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
-<body class="">
+<body>
+<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -21,32 +36,25 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <div class="hero">
 
 <h1>Daily News</h1>
-<p class="small">US · Canada · Europe · World · Crypto · Tech — auto‑updated every day by our bot. Last update: 2025-09-29 03:23 UTC</p>
-<div class="tabs">
-  <a class="tab active" href="#us">US</a>
-  <a class="tab" href="#canada">Canada</a>
-  <a class="tab" href="#europe">Europe</a>
-  <a class="tab" href="#world">World</a>
-  <a class="tab" href="#crypto">Crypto</a>
-  <a class="tab" href="#tech">Tech</a>
+<p class="small">US · Canada · Europe · World · Crypto · Tech — auto‑updated daily by our bot. Last update: 2025-09-29 04:45 UTC</p>
+<div class="grid">
+  <div class="card"><h3>US</h3><p class="small">Refreshing…</p></div>
+  <div class="card"><h3>Canada</h3><p class="small">Refreshing…</p></div>
+  <div class="card"><h3>Europe</h3><p class="small">Refreshing…</p></div>
+  <div class="card"><h3>World</h3><p class="small">Refreshing…</p></div>
+  <div class="card"><h3>Crypto</h3><p class="small">Refreshing…</p></div>
+  <div class="card"><h3>Tech</h3><p class="small">Refreshing…</p></div>
 </div>
-<div id="news-container">
-  <div class="news-col"><div class="news-item"><div class="news-meta">Loading… (first build will replace this within a day)</div></div></div>
-</div>
-<script>
-const tabs = document.querySelectorAll('.tab');
-function activate(hash){ tabs.forEach(t=>t.classList.toggle('active', t.getAttribute('href')===hash)); }
-window.addEventListener('hashchange',()=>activate(location.hash||'#us'));
-activate(location.hash||'#us');
-</script>
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
   </footer>
 </div></body></html>

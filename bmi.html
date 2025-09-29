@@ -2,15 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BMI calculator — Promtmix</title>
+<title>BMI — Promtmix</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
-<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
-<meta property="og:title" content="BMI calculator — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix">
+<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
+<meta property="og:title" content="BMI — Promtmix"><meta property="og:type" content="website">
+<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Promtmix",
+  "url": "https://levko-123.github.io/Promtmix/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
-<body class="section-accent-nut">
+<body>
+<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -21,46 +36,37 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <div class="hero">
 
-<h1>BMI calculator</h1>
+<h1>BMI</h1>
 <div class="grid">
   <div class="card">
-    <label>Unit</label>
-    <select id="u"><option value="metric">Metric (kg / cm)</option><option value="imperial">Imperial (lb / in)</option></select>
-    <label>Weight</label><input id="w" type="number" step="any" value="70">
-    <label>Height</label><input id="h" type="number" step="any" value="175">
+    <label>Unit</label><select id="u"><option value="metric">Metric (kg/cm)</option><option value="imperial">Imperial (lb/in)</option></select>
+    <label>Weight</label><input id="w" type="number" value="70">
+    <label>Height</label><input id="h" type="number" value="175">
     <div class="result" id="out"></div>
   </div>
-  <div class="card">
-    <h3>Basics</h3>
-    <p class="small">BMI = weight / height² (kg/m²). It’s a rough screening metric and not a diagnosis.</p>
-    <p><a data-amazon-query="body weight scale">Body scales</a> · <a data-amazon-query="measuring tape">Measuring tapes</a></p>
-  </div>
+  <div class="card"><p class="small">BMI = weight / height². Rough screening tool.</p>
+  <p><a data-amazon-query="body weight scale">Body scales</a> · <a data-amazon-query="measuring tape">Measuring tapes</a></p></div>
 </div>
 <script>
 const U=document.getElementById('u'), W=document.getElementById('w'), H=document.getElementById('h'), out=document.getElementById('out');
 function update(){
-  let w=parseFloat(W.value||0), h=parseFloat(H.value||0);
-  let bmi = 0;
-  if(U.value==='metric'){ bmi = w / Math.pow(h/100.0, 2); }
-  else { bmi = (w / Math.pow(h,2)) * 703.06957964; }
-  let cat = '—';
-  if(bmi>0){
-    if(bmi<18.5) cat='Underweight';
-    else if(bmi<25) cat='Normal';
-    else if(bmi<30) cat='Overweight';
-    else cat='Obesity';
-  }
-  out.textContent = 'BMI: ' + (isFinite(bmi)? bmi.toFixed(1):'—') + ' ('+cat+')';
+  let w=parseFloat(W.value||0), h=parseFloat(H.value||0); let bmi=0,cat='—';
+  if(U.value==='metric') bmi = w/Math.pow(h/100,2);
+  else bmi = (w/Math.pow(h,2))*703.06957964;
+  if(bmi>0){ if(bmi<18.5) cat='Underweight'; else if(bmi<25) cat='Normal'; else if(bmi<30) cat='Overweight'; else cat='Obesity'; }
+  out.textContent='BMI: '+bmi.toFixed(1)+' ('+cat+')';
 }
 document.addEventListener('input', update); update();
 </script>
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
   </footer>
 </div></body></html>

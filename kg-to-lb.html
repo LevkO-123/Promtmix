@@ -4,14 +4,29 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kilograms to Pounds — Promtmix</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
-<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
+<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
 <meta property="og:title" content="Kilograms to Pounds — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix">
+<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Promtmix",
+  "url": "https://levko-123.github.io/Promtmix/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
-<body class="section-accent-conv">
+<body>
+<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -22,33 +37,42 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <div class="hero">
 
 <h1>Kilograms to Pounds</h1>
-<p class="small">kg → lb.</p>
+<p class="small">kg → lb. lb ≈ kg × 2.20462</p>
 <div class="grid">
   <div class="card">
     <label>Value (kg)</label>
-    <input id="val" type="number" step="any" value="1">
+    <input id="val" class="input" type="number" step="any" value="1">
     <div class="result" id="out"></div>
   </div>
   <div class="card">
     <h3>Quick presets</h3>
     <span class="tag preset" data-v="1">1 kg</span> <span class="tag preset" data-v="2">2 kg</span> <span class="tag preset" data-v="5">5 kg</span> <span class="tag preset" data-v="10">10 kg</span> <span class="tag preset" data-v="20">20 kg</span>
-    <hr>
+    <div class="hr"></div>
     <p class="small">Formula: lb ≈ kg × 2.20462</p>
   </div>
   <div class="card">
     <h3>Useful gear</h3>
-    <p><a data-amazon-query="body weight scale">Search on Amazon</a> — postal scales, calipers, tape measures.</p>
+    <p><a data-amazon-query="body weight scale">Search on Amazon</a> — top related items.</p>
   </div>
 </div>
 <script>
-function convert(x){ return (x*2.20462262185).toFixed(5); }
-const val=document.getElementById('val'); const out=document.getElementById('out');
-function update(){ const x=parseFloat(val.value||0); const y=convert(x); out.textContent = isFinite(y) ? y + " lb" : "—"; }
+function convert(x){ return (x*2.20462262185); }
+const val = document.getElementById('val');
+const out = document.getElementById('out');
+function update(){
+  const x = parseFloat(val.value||0);
+  const y = convert(x);
+  if(!isFinite(y)){ out.textContent='—'; return; }
+  animateNumber(out, 0, y);
+  out.textContent = (Math.round(y*100)/100)+' lb';
+}
 document.addEventListener('input', update);
 document.querySelectorAll('.preset').forEach(el=>el.addEventListener('click',()=>{val.value=el.dataset.v;update();}));
 update();
@@ -56,6 +80,6 @@ update();
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
   </footer>
 </div></body></html>

@@ -3,14 +3,29 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Macro splits — Promtmix</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
-<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
+<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
 <meta property="og:title" content="Macro splits — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix">
+<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Promtmix",
+  "url": "https://levko-123.github.io/Promtmix/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
-<body class="section-accent-nut">
+<body>
+<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -21,6 +36,8 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <div class="hero">
@@ -28,31 +45,22 @@
 <h1>Macro splits</h1>
 <div class="grid">
   <div class="card">
-    <label>Daily calories (kcal)</label><input id="c" type="number" value="2000">
-    <label>Goal</label>
-    <select id="g">
+    <label>Daily calories</label><input id="c" type="number" value="2000">
+    <label>Goal</label><select id="g">
       <option value="balanced">Balanced (30/40/30)</option>
       <option value="keto">Keto‑ish (20/5/75)</option>
-      <option value="high_protein">High Protein (40/35/25)</option>
-    </select>
+      <option value="high_protein">High Protein (40/35/25)</option></select>
     <div class="result" id="out"></div>
   </div>
-  <div class="card">
-    <h3>Breakdown</h3>
-    <p class="small">Protein & carbs: 4 kcal/g; Fat: 9 kcal/g.</p>
-    <p><a data-amazon-query="protein powder whey">Protein</a> · <a data-amazon-query="omega 3">Omega‑3</a> · <a data-amazon-query="kitchen scale">Kitchen scales</a></p>
-  </div>
+  <div class="card"><p class="small">Protein/Carbs 4 kcal/g; Fat 9 kcal/g.</p>
+  <p><a data-amazon-query="protein powder whey">Protein</a> · <a data-amazon-query="omega 3">Omega‑3</a> · <a data-amazon-query="kitchen scale">Kitchen scales</a></p></div>
 </div>
 <script>
 const C=document.getElementById('c'), G=document.getElementById('g'), out=document.getElementById('out');
 function update(){
-  const cal = parseFloat(C.value||0);
-  let p=0.3,c=0.4,f=0.3;
-  if(G.value==='keto'){ p=0.2;c=0.05;f=0.75; }
-  if(G.value==='high_protein'){ p=0.4;c=0.35;f=0.25; }
-  const gramsP = Math.round((cal*p)/4);
-  const gramsC = Math.round((cal*c)/4);
-  const gramsF = Math.round((cal*f)/9);
+  const cal=parseFloat(C.value||0); let p=.3,c=.4,f=.3;
+  if(G.value==='keto'){{p=.2;c=.05;f=.75}} if(G.value==='high_protein'){{p=.4;c=.35;f=.25}}
+  const gramsP=Math.round((cal*p)/4), gramsC=Math.round((cal*c)/4), gramsF=Math.round((cal*f)/9);
   out.textContent = `Protein: ${gramsP} g  |  Carbs: ${gramsC} g  |  Fat: ${gramsF} g`;
 }
 document.addEventListener('input', update); update();
@@ -60,6 +68,6 @@ document.addEventListener('input', update); update();
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
   </footer>
 </div></body></html>

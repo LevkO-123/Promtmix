@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liters to Gallons (US) — Promtmix</title>
+<title>Inches to Millimeters — Promtmix</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
 <meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
-<meta property="og:title" content="Liters to Gallons (US) — Promtmix"><meta property="og:type" content="website">
+<meta property="og:title" content="Inches to Millimeters — Promtmix"><meta property="og:type" content="website">
 <meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
 <script type="application/ld+json">
 {
@@ -43,27 +43,27 @@
   </div>
   <div class="hero">
 
-<h1>Liters to Gallons (US)</h1>
-<p class="small">L → gal. gal ≈ L × 0.264172</p>
+<h1>Inches to Millimeters</h1>
+<p class="small">in → mm. mm = in × 25.4</p>
 <div class="grid">
   <div class="card">
-    <label>Value (L)</label>
+    <label>Value (in)</label>
     <input id="val" class="input" type="number" step="any" value="1">
     <div class="result" id="out"></div>
   </div>
   <div class="card">
     <h3>Quick presets</h3>
-    <span class="tag preset" data-v="1">1 L</span> <span class="tag preset" data-v="5">5 L</span> <span class="tag preset" data-v="10">10 L</span> <span class="tag preset" data-v="20">20 L</span> <span class="tag preset" data-v="50">50 L</span>
+    <span class="tag preset" data-v="1">1 in</span> <span class="tag preset" data-v="2">2 in</span> <span class="tag preset" data-v="4">4 in</span> <span class="tag preset" data-v="8">8 in</span> <span class="tag preset" data-v="12">12 in</span>
     <div class="hr"></div>
-    <p class="small">Formula: gal ≈ L × 0.264172</p>
+    <p class="small">Formula: mm = in × 25.4</p>
   </div>
   <div class="card">
     <h3>Useful gear</h3>
-    <p><a data-amazon-query="fuel container">Search on Amazon</a> — top related items.</p>
+    <p><a data-amazon-query="digital caliper">Search on Amazon</a> — top related items.</p>
   </div>
 </div>
 <script>
-function convert(x){ return (x*0.2641720524); }
+function convert(x){ return (x*25.4); }
 const val = document.getElementById('val');
 const out = document.getElementById('out');
 function update(){
@@ -71,7 +71,7 @@ function update(){
   const y = convert(x);
   if(!isFinite(y)){ out.textContent='—'; return; }
   animateNumber(out, 0, y);
-  out.textContent = (Math.round(y*100)/100)+' gal';
+  out.textContent = (Math.round(y*100)/100)+' mm';
 }
 document.addEventListener('input', update);
 document.querySelectorAll('.preset').forEach(el=>el.addEventListener('click',()=>{val.value=el.dataset.v;update();}));

@@ -3,14 +3,29 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dimensional weight — Promtmix</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
-<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
+<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
 <meta property="og:title" content="Dimensional weight — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix">
+<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Promtmix",
+  "url": "https://levko-123.github.io/Promtmix/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
-<body class="section-accent-log">
+<body>
+<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -21,48 +36,39 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <div class="hero">
 
 <h1>Dimensional weight (DIM)</h1>
-<p class="small">Estimate billable weight by carrier. Real rates vary by service; always check your carrier. Uses common divisors: UPS/FedEx/DHL: 139 in³/lb (5000 cm³/kg); USPS: 166 in³/lb (6000 cm³/kg) for some domestic shipments.</p>
+<p class="small">Common divisors: UPS/FedEx/DHL 139 in³/lb (5000 cm³/kg). USPS 166 in³/lb (6000 cm³/kg) for some domestic shipments.</p>
 <div class="grid">
   <div class="card">
     <label>Length</label><input id="l" type="number" step="any" value="12">
     <label>Width</label><input id="w" type="number" step="any" value="8">
     <label>Height</label><input id="h" type="number" step="any" value="6">
-    <label>Unit</label>
-    <select id="u"><option value="in">inches</option><option value="cm">cm</option></select>
-    <label>Carrier</label>
-    <select id="c">
-      <option value="UPS">UPS</option><option value="FedEx">FedEx</option>
-      <option value="DHL">DHL</option><option value="USPS">USPS</option>
-    </select>
+    <label>Unit</label><select id="u"><option value="in">inches</option><option value="cm">cm</option></select>
+    <label>Carrier</label><select id="c"><option>UPS</option><option>FedEx</option><option>DHL</option><option>USPS</option></select>
     <div class="result" id="out"></div>
   </div>
-  <div class="card">
-    <h3>Packing gear</h3>
-    <p><a data-amazon-query="postal scale 10lb">Postal scales</a> · <a data-amazon-query="bubble wrap">Bubble wrap</a> · <a data-amazon-query="packing tape">Packing tape</a></p>
-  </div>
+  <div class="card"><h3>Gear</h3><p><a data-amazon-query="postal scale 10lb">Postal scales</a> · <a data-amazon-query="bubble wrap">Bubble wrap</a></p></div>
 </div>
 <script>
 const L=document.getElementById('l'), W=document.getElementById('w'), H=document.getElementById('h'), U=document.getElementById('u'), C=document.getElementById('c'), out=document.getElementById('out');
 function update(){
-  let dimDiv = 139; let dimDivMetric = 5000;
-  if(C.value==='USPS'){ dimDiv = 166; dimDivMetric = 6000; }
+  let divIn=139, divCm=5000; if(C.value==='USPS'){{divIn=166;divCm=6000;}}
   const l=parseFloat(L.value||0), w=parseFloat(W.value||0), h=parseFloat(H.value||0);
-  let volIn3 = l*w*h;
-  if(U.value==='cm'){ volIn3 = (l*w*h)/16.387064; }
-  const lb = volIn3 / dimDiv;
-  const kg = (l*w*h)/dimDivMetric;
-  out.innerHTML = lb.toFixed(2)+" lb (approx)  |  "+kg.toFixed(2)+" kg (approx)";
+  let in3=l*w*h; if(U.value==='cm') in3=(l*w*h)/16.387064;
+  const lb=in3/divIn; const kg=(l*w*h)/divCm;
+  out.innerHTML = lb.toFixed(2)+" lb  |  "+kg.toFixed(2)+" kg";
 }
 document.addEventListener('input', update); update();
 </script>
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
   </footer>
 </div></body></html>

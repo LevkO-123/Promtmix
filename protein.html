@@ -1,15 +1,14 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liters to Gallons (US) — Promtmix</title>
+<title>Protein intake — Promtmix</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
 <meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
-<meta property="og:title" content="Liters to Gallons (US) — Promtmix"><meta property="og:type" content="website">
+<meta property="og:title" content="Protein intake — Promtmix"><meta property="og:type" content="website">
 <meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
 <script type="application/ld+json">
 {
@@ -43,39 +42,25 @@
   </div>
   <div class="hero">
 
-<h1>Liters to Gallons (US)</h1>
-<p class="small">L → gal. gal ≈ L × 0.264172</p>
+<h1>Protein intake</h1>
+<p class="small">Approximate daily protein by activity.</p>
 <div class="grid">
   <div class="card">
-    <label>Value (L)</label>
-    <input id="val" class="input" type="number" step="any" value="1">
+    <label>Weight (kg)</label><input id="w" type="number" value="70">
+    <label>Activity</label><select id="a">
+      <option value="0.8">Sedentary (0.8 g/kg)</option>
+      <option value="1.2">Light (1.2 g/kg)</option>
+      <option value="1.6">Active (1.6 g/kg)</option>
+      <option value="2.0">Athlete (2.0 g/kg)</option>
+    </select>
     <div class="result" id="out"></div>
   </div>
-  <div class="card">
-    <h3>Quick presets</h3>
-    <span class="tag preset" data-v="1">1 L</span> <span class="tag preset" data-v="5">5 L</span> <span class="tag preset" data-v="10">10 L</span> <span class="tag preset" data-v="20">20 L</span> <span class="tag preset" data-v="50">50 L</span>
-    <div class="hr"></div>
-    <p class="small">Formula: gal ≈ L × 0.264172</p>
-  </div>
-  <div class="card">
-    <h3>Useful gear</h3>
-    <p><a data-amazon-query="fuel container">Search on Amazon</a> — top related items.</p>
-  </div>
+  <div class="card"><p class="small">Ranges vary; consult a professional for personalized advice.</p></div>
 </div>
 <script>
-function convert(x){ return (x*0.2641720524); }
-const val = document.getElementById('val');
-const out = document.getElementById('out');
-function update(){
-  const x = parseFloat(val.value||0);
-  const y = convert(x);
-  if(!isFinite(y)){ out.textContent='—'; return; }
-  animateNumber(out, 0, y);
-  out.textContent = (Math.round(y*100)/100)+' gal';
-}
-document.addEventListener('input', update);
-document.querySelectorAll('.preset').forEach(el=>el.addEventListener('click',()=>{val.value=el.dataset.v;update();}));
-update();
+const W=document.getElementById('w'), A=document.getElementById('a'), out=document.getElementById('out');
+function update(){ const g=parseFloat(A.value||1)*parseFloat(W.value||0); out.textContent=g.toFixed(0)+' g/day'; }
+document.addEventListener('input', update); update();
 </script>
   </div>
   <footer>

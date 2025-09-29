@@ -3,14 +3,29 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Box volume — Promtmix</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
-<meta name="description" content="Converters, logistics calculators and nutrition tools. News dashboard for US, Canada, Europe, World and Crypto.">
+<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
 <meta property="og:title" content="Box volume — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix">
+<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Promtmix",
+  "url": "https://levko-123.github.io/Promtmix/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
-<body class="section-accent-log">
+<body>
+<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -21,40 +36,36 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </nav>
   </div>
   <div class="hero">
 
-<h1>Box volume calculator</h1>
+<h1>Box volume</h1>
 <div class="grid">
   <div class="card">
     <label>Length</label><input id="l" type="number" step="any" value="12">
     <label>Width</label><input id="w" type="number" step="any" value="8">
     <label>Height</label><input id="h" type="number" step="any" value="6">
-    <label>Unit</label>
-    <select id="u"><option value="in">inches</option><option value="cm">cm</option></select>
+    <label>Unit</label><select id="u"><option value="in">inches</option><option value="cm">cm</option></select>
     <div class="result" id="out"></div>
   </div>
-  <div class="card">
-    <h3>Tips</h3>
-    <p class="small">Cubic feet help estimate shipping and storage. <a data-amazon-query="cardboard boxes packing tape scale">Packing supplies</a>.</p>
-  </div>
+  <div class="card"><h3>Packing gear</h3><p><a data-amazon-query="cardboard boxes packing tape scale">Packing supplies</a></p></div>
 </div>
 <script>
 const l=document.getElementById('l'), w=document.getElementById('w'), h=document.getElementById('h'), u=document.getElementById('u'), out=document.getElementById('out');
 function update(){
   const L=parseFloat(l.value||0), W=parseFloat(w.value||0), H=parseFloat(h.value||0);
-  let cin = L*W*H; // default inches
-  if(u.value==='cm'){ cin = (L*W*H)/16.387064; }
-  const ccm = cin*16.387064;
-  const cft = cin/1728.0;
-  out.innerHTML = cin.toFixed(2)+" in³ &nbsp; | &nbsp; "+ccm.toFixed(2)+" cm³ &nbsp; | &nbsp; "+cft.toFixed(3)+" ft³";
+  let cin=L*W*H; if(u.value==='cm') cin=(L*W*H)/16.387064;
+  const ccm = cin*16.387064; const cft=cin/1728.0;
+  out.innerHTML = cin.toFixed(2)+" in³  |  "+ccm.toFixed(2)+" cm³  |  "+cft.toFixed(3)+" ft³";
 }
 document.addEventListener('input', update); update();
 </script>
   </div>
   <footer>
     © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 03:23 UTC. This site uses affiliate links and ads to remain free.</span>
+    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
   </footer>
 </div></body></html>

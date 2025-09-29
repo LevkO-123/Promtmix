@@ -1,15 +1,14 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Liters to Gallons (US) — Promtmix</title>
+<title>CBM calculator — Promtmix</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
 <script defer src="pmx.js"></script>
 <meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
-<meta property="og:title" content="Liters to Gallons (US) — Promtmix"><meta property="og:type" content="website">
+<meta property="og:title" content="CBM calculator — Promtmix"><meta property="og:type" content="website">
 <meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
 <script type="application/ld+json">
 {
@@ -43,39 +42,28 @@
   </div>
   <div class="hero">
 
-<h1>Liters to Gallons (US)</h1>
-<p class="small">L → gal. gal ≈ L × 0.264172</p>
+<h1>CBM — Cubic meters</h1>
 <div class="grid">
   <div class="card">
-    <label>Value (L)</label>
-    <input id="val" class="input" type="number" step="any" value="1">
+    <label>Length</label><input id="l" type="number" step="any" value="40">
+    <label>Width</label><input id="w" type="number" step="any" value="30">
+    <label>Height</label><input id="h" type="number" step="any" value="20">
+    <label>Unit</label><select id="u"><option value="cm">cm</option><option value="in">in</option></select>
+    <label>Quantity (cartons)</label><input id="q" type="number" value="10">
     <div class="result" id="out"></div>
   </div>
-  <div class="card">
-    <h3>Quick presets</h3>
-    <span class="tag preset" data-v="1">1 L</span> <span class="tag preset" data-v="5">5 L</span> <span class="tag preset" data-v="10">10 L</span> <span class="tag preset" data-v="20">20 L</span> <span class="tag preset" data-v="50">50 L</span>
-    <div class="hr"></div>
-    <p class="small">Formula: gal ≈ L × 0.264172</p>
-  </div>
-  <div class="card">
-    <h3>Useful gear</h3>
-    <p><a data-amazon-query="fuel container">Search on Amazon</a> — top related items.</p>
-  </div>
+  <div class="card"><h3>Note</h3><p class="small">Rough estimate for ocean freight planning. 1 CBM ≈ 35.3147 ft³.</p></div>
 </div>
 <script>
-function convert(x){ return (x*0.2641720524); }
-const val = document.getElementById('val');
-const out = document.getElementById('out');
+const L=document.getElementById('l'), W=document.getElementById('w'), H=document.getElementById('h'), U=document.getElementById('u'), Q=document.getElementById('q'), out=document.getElementById('out');
 function update(){
-  const x = parseFloat(val.value||0);
-  const y = convert(x);
-  if(!isFinite(y)){ out.textContent='—'; return; }
-  animateNumber(out, 0, y);
-  out.textContent = (Math.round(y*100)/100)+' gal';
+  let l=parseFloat(L.value||0), w=parseFloat(W.value||0), h=parseFloat(H.value||0);
+  if(U.value==='in'){{ l*=2.54; w*=2.54; h*=2.54; }}
+  const cbm = (l*w*h)/1000000.0 * parseFloat(Q.value||0);
+  const ft3 = cbm * 35.3146667;
+  out.textContent = cbm.toFixed(3) + " m³  |  " + ft3.toFixed(1) + " ft³";
 }
-document.addEventListener('input', update);
-document.querySelectorAll('.preset').forEach(el=>el.addEventListener('click',()=>{val.value=el.dataset.v;update();}));
-update();
+document.addEventListener('input', update); update();
 </script>
   </div>
   <footer>
