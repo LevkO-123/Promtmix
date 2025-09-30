@@ -1,31 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fast, minimalist tools — Promtmix</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734" crossorigin="anonymous"></script>
-<script defer src="pmx.js"></script>
-<meta name="description" content="Cinematic hacker-style calculators: converters, logistics, nutrition + auto-updated news (US/CA/EU/World/Crypto/Tech).">
-<meta property="og:title" content="Fast, minimalist tools — Promtmix"><meta property="og:type" content="website">
-<meta property="og:site_name" content="Promtmix"><meta property="og:image" content="https://levko-123.github.io/Promtmix/favicon.svg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Promtmix",
-  "url": "https://levko-123.github.io/Promtmix/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://levko-123.github.io/Promtmix/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promtmix — Fast, Minimalist Tools</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=5a">
+
+  <!-- ✅ Код AdSense для підтвердження -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6781021197640734"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="bg-grid"></div>
 <div class="container">
   <div class="header">
     <div class="brand">Promtmix</div>
@@ -36,25 +22,38 @@
       <a href="nutrition.html">Nutrition</a>
       <a href="news.html">News</a>
       <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
     </nav>
+    <button class="button" onclick="openDrawer()">Menu</button>
   </div>
-  <div class="hero">
 
-<h1>Promtmix — cinematic hacker‑style tools</h1>
-<p class="small">Converters, logistics calculators, nutrition tools and a daily news dashboard. No sign‑up. No cookies.</p>
-<div class="grid">
-  <div class="card"><h2>Converters</h2><p class="small">mm↔inch, cm↔inch, kg↔lb, °C↔°F, and more.</p><a class="button" href="converters.html">Open Converters</a></div>
-  <div class="card"><h2>Logistics</h2><p class="small">Box volume, DIM weight (UPS/FedEx/DHL/USPS), and more.</p><a class="button" href="logistics.html">Open Logistics</a></div>
-  <div class="card"><h2>Nutrition</h2><p class="small">BMI, BMR/TDEE, macros, water & protein intake.</p><a class="button" href="nutrition.html">Open Nutrition</a></div>
-  <div class="card"><h2>Daily News</h2><p class="small">US · Canada · Europe · World · Crypto · Tech — auto updates.</p><a class="button" href="news.html">Open News</a></div>
-</div>
-<div class="hr"></div>
-<p class="small">Tip: tap a preset tag to auto‑fill inputs. Results reveal with a kinetic count‑up.</p>
+  <div class="hero">
+    <h1>Cinematic tools.</h1>
+    <div class="kicker small">Converters · Logistics · Nutrition · News</div>
+    <div class="grid">
+      <div class="card"><h2>Converters</h2><a class="button" href="converters.html">Open</a></div>
+      <div class="card"><h2>Logistics</h2><a class="button" href="logistics.html">Open</a></div>
+      <div class="card"><h2>Nutrition</h2><a class="button" href="nutrition.html">Open</a></div>
+      <div class="card"><h2>News</h2><a class="button" href="news.html">Open</a></div>
+    </div>
   </div>
-  <footer>
-    © 2025 Promtmix — Free calculators & tools. Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a>.
-    <br><span class="small">Built 2025-09-29 04:45 UTC. Affiliate links & ads keep Promtmix free.</span>
-  </footer>
-</div></body></html>
+
+  <footer class="small">© 2025 Promtmix · Contact: <a href="mailto:support@promtmix.com">support@promtmix.com</a></footer>
+</div>
+
+<div class="drawer-backdrop" onclick="closeDrawer()"></div>
+<div class="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div class="brand">Launcher</div>
+    <a href="#" onclick="closeDrawer();return false;" style="color:var(--muted)">Close ✕</a>
+  </div>
+  <div class="icon-grid">
+    <a class="icon-btn" href="converters.html">Converters</a>
+    <a class="icon-btn" href="logistics.html">Logistics</a>
+    <a class="icon-btn" href="nutrition.html">Nutrition</a>
+    <a class="icon-btn" href="news.html">News</a>
+  </div>
+</div>
+
+<script defer src="fx.js?v=5a"></script>
+</body>
+</html>
